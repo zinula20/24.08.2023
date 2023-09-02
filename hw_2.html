@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HW2</title>
+</head>
+<body>
+    <script>
+        function print(element, index) {
+            document.write(`${element} &nbsp`);
+        }
+
+        function break_line() {
+            document.write(`<br />`);
+        } 
+
+        const names = ["Emily", "Liam", "Sophia", "Noah", "Olivia", "Ethan", "Ava", "Jackson", "Isabella", "Aiden"];
+        print("<table border=3 style='color:rgb(0, 0, 255)'>")
+        print("<tr>")
+        names.forEach(element => print(`<td style='padding:7px'> ${element} </td>`))
+        print("</tr>")
+        print("</table>")
+        break_line();
+
+        const letters_4plus = names.filter(names => names.length >= 4);
+        letters_4plus.forEach(print);
+        break_line();
+        break_line();
+
+        const letters_4minus = names.filter(names => names.length <= 4);
+        letters_4minus.forEach(print);
+        break_line();
+        break_line();
+
+        let root_List = " ";
+        names.forEach(names => root_List += names);
+        print(root_List);
+        break_line();
+        break_line();
+
+        const names_length = names.map(names => names.length);
+        print(names_length);
+        break_line();
+        break_line();
+        
+        const names_length_2 = names.map(names => `${names}[${names.length}]`);
+        print(names_length_2);
+        break_line();
+        break_line();
+
+        const f_letter = names.map(names => names[0]);
+        print(f_letter);
+        break_line();
+        break_line();
+        
+        const e_letter = names.filter(names => names.indexOf("E") >= 0);
+        print(e_letter);
+        break_line();
+        break_line();
+
+        const characters_8 = names.some(names => names.length = 8);
+        print(characters_8);
+        break_line();
+        break_line();
+
+        
+    </script>
+    
+</body>
+</html>

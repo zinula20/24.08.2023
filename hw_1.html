@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array 1</title>
+</head>
+<body>
+    <script>
+       
+        const max_elements = 10;
+        const a_n_range = 7;
+
+        function get_random(range) {
+            return Math.floor(Math.random() * range) + 1
+        }
+
+        const rnd_list = [ ]
+        for (let i = 1; i <= max_elements; i++) {
+            let random_number = get_random(a_n_range);
+            rnd_list.push (random_number)
+        }
+
+        function print(element, index) {
+            document.write(`${element} &nbsp`);
+        }
+
+        function break_line() {
+            document.write(`<br />`);
+        } 
+
+          rnd_list.forEach(print);
+          break_line();
+
+          for (const element of rnd_list) {
+            print(element);
+        }  
+          break_line();
+          
+        let sum = 0;
+        function add(element) {
+            sum += element
+        }
+        rnd_list.forEach(add);
+        document.write(`<h3 style="color:rgb(0, 0, 255)">The sum is : ${sum}</h3>`);
+        break_line();
+
+        function smaller(element) {
+            if (element < 5) {
+                return true;
+            }
+            return false;
+        }
+        const small = rnd_list.filter(smaller);
+        print(small);
+        break_line();
+        break_line();
+
+        const list_2 = rnd_list.map(element => element ** 2);
+        print(`power 2: `);
+        list_2.forEach(print);
+        break_line();
+        break_line();
+
+        function week_day(element) {
+            switch (element) {
+                case 1: return "Sunday"
+                case 2: return "Monday"
+                case 3: return "Tuesday"
+                case 4: return "Wednesday"
+                case 5: return "Thursday"
+                case 6: return "Friday"
+                case 7: return "Saturday"
+                default: return "&#9940;There is no suitable day&#9940;"
+            } 
+        }  
+        const days_name = rnd_list.map(week_day);
+        break_line();
+        days_name.forEach(print);    
+
+
+    </script>
+    
+</body>
+</html>
